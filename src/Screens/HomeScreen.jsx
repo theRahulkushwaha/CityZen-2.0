@@ -5,6 +5,7 @@ import DropdownMenu from '../Components/DropdownMenu';
 import Calandar from '../Components/Calandar';
 /*import MovingAlerts from '../Components/AlertSec/MovingAlerts';*/
 import Map from '../Components/Map';
+import Alert from '../Components/Alerts';
 
 
 
@@ -64,13 +65,16 @@ function HomeScreen() {
               <div className="incident-alert">
                 <div className="alert-history">
                   <h2>Alert History</h2>
-                  {/* <MovingAlerts /> */}
+                  <Alert/>
                 </div>
               </div>
             </div>
             <div className="right-cont-bottom">
               <div className="map-container">
                 <Map />
+              </div>
+              <div className='graph'>
+        
               </div>
             </div>
           </div>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import { AiOutlineWarning } from "react-icons/ai";
 import "../Pages/Page-css/Page1.css";
+import "../Components/Alerts";
+import Alert from "../Components/Alerts";
 
 function Page1() {
   const [videoSrc, setVideoSrc] = useState(null);
@@ -60,29 +62,7 @@ function Page1() {
 
         {/* Alerts Section */}
         <div className="alerts-section">
-          <h2 className="alerts-title">AI Accident Detection Alerts</h2>
-          {error && <p className="error-message">{error}</p>} {/* Display error if any */}
-          {alerts.length === 0 && !error ? (
-            <p className="no-alerts">No alerts at the moment.</p>
-          ) : (
-            alerts.map((alert) => (
-              <div
-                key={alert.id}
-                className={`alert-item alert-severity-${alert.severity}`}
-              >
-                <div className="alert-content">
-                  <AiOutlineWarning className="alert-icon" />
-                  <p>{alert.message}</p>
-                </div>
-                <button
-                  onClick={() => dismissAlert(alert.id)}
-                  aria-label="Dismiss"
-                >
-                  Dismiss
-                </button>
-              </div>
-            ))
-          )}
+            <Alert/>
         </div>
       </div>
     </div>

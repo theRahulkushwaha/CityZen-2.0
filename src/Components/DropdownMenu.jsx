@@ -32,7 +32,7 @@ function DropdownMenu() {
                         <ul>
                             <li><a href="home">Home</a></li>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Reports</a></li>
+                            <li><a href="reports">Reports</a></li>
                             <li><a href="feedback">Feedback</a></li>
                         </ul>
                     </div>

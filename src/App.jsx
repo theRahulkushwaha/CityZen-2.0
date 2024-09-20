@@ -40,6 +40,8 @@ function App() {
             {/* <Route path="/model" element={<AImodel/>}/> */}
             <Route path="/feedback" element={<Feedback/>}/>
             <Route path="/complain" element={<ComplaintForm/>}/>
+            <Route path="/reports" element={<Report/>}/>
+
             {/* <Route path="/page1" element={<Page1 />} /> */}
 
 
