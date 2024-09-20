@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/HomeScreen.css';
 import DropdownMenu from '../Components/DropdownMenu';
 import Calandar from '../Components/Calandar';
-import MovingAlerts from '../Components/AlertSec/MovingAlerts';
-import GoogleMapComponent from '../Components/GoogleMapComponent';
+/*import MovingAlerts from '../Components/AlertSec/MovingAlerts';*/
+import GoogleMapComponent from '../Components/Map';
 
 
 
