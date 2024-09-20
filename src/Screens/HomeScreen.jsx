@@ -30,7 +30,6 @@ function HomeScreen() {
                   <li><a href="Page2"> <img src="/image/road.png" alt="img" />Infrastructure</a></li>
                   <li><a href="Page3"> <img src="/image/cyber-security.png" alt="img" />Crime</a></li>
                   <li><a href="Page4"> <img src="/image/traffic-light.png" alt="img" />Traffic</a></li>
-                  {/* Add more nav items here */}
                 </ul>
               </div>
               <div className="complaint-sec">
@@ -73,7 +72,6 @@ function HomeScreen() {
               <div className="map-container">
                 <Map />
               </div>
-              
             </div>
           </div>
         </div>
