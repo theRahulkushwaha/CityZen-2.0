@@ -1,0 +1,62 @@
+.alert-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+}
+
+.alert-streams {
+  flex-grow: 1; /* Allows the alert list to grow and take available space */
+  overflow-y: scroll; /* Adds scroll if there are many alerts */
+  padding: 10px;
+  border: 1px solid #ffffff;
+  margin-bottom: 10px;
+  position: relative; /* For scrollbar styling */
+}
+
+/* Custom scrollbar styles */
+.alert-streams::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.alert-streams::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.alert-streams::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.alert-streams::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+.alert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alert-item {
+  padding: 5px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center; /* Keeps the button at the end of the column */
+  position: sticky; /* Keeps the button fixed relative to the parent container */
+  margin-bottom: 5px;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+}
