@@ -41,7 +41,6 @@ function HomeScreen() {
                   <li><a href="Page2"> <img src="/image/road.png" alt="img" />Infrastructure</a></li>
                   <li><a href="Page3"> <img src="/image/cyber-security.png" alt="img" />Crime</a></li>
                   <li><a href="Page4"> <img src="/image/traffic-light.png" alt="img" />Traffic</a></li>
-                  {/* Add more nav items here */}
                 </ul>
 
               </div>
@@ -89,18 +88,6 @@ function HomeScreen() {
             <div className="right-cont-bottom">
               <div className="map-container">
                 <Map />
-              </div>
-              <div className="model-card">
-                <div className="card">
-                  <span className="card__title">Subscribe</span>
-                  <p className="card__content">
-                  Get existential crisis delivered straight to your inbox every week.
-                  </p>
-                  <div className="card__form">
-                    <input placeholder="Your Email" type="text" />
-                    <button className="sign-up"> Sign up</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,93 @@
+.feed {
+    border: #000000 solid 1px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(17, 24, 38)
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.feed-container {
+    display: flex;
+    height: 80vh;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(17, 24, 38);
+}
+
+.video-section {
+    flex: 1;
+    margin-right: 20px;
+    width: 70vw;
+    border:seagreen solid 2px;
+}
+
+.video-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.video-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.alerts-section {
+    width: 30%;
+    height: 77vh;
+    background-color: rgb(31, 42, 56);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    border:seagreen solid 2px;
+}
+
+.alerts-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+}
+
+.alert-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.alert-severity-1 {
+    background-color: yellow;
+}
+
+.alert-severity-2 {
+    background-color: orange;
+}
+
+.alert-severity-3 {
+    background-color: red;
+}
+
+.no-alerts {
+    color: white;
+    font-size: 16px;
+}
