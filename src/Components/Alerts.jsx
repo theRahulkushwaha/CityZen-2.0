@@ -1,5 +1,6 @@
+// alerts.jsx
 import React from "react";
-import "../Components/Alerts.css"; 
+import "../Components/Alerts.css";
 
 const AlertStream = ({ streamUrl, alerts, setAlerts }) => {
   React.useEffect(() => {
@@ -29,23 +30,17 @@ const AlertStream = ({ streamUrl, alerts, setAlerts }) => {
   );
 };
 
-function Alert() {
+function Alert({ streamUrl }) {
   const [alerts, setAlerts] = React.useState({});
 
   const handleClearAlerts = () => {
-    Object.keys(alerts).forEach((streamUrl) => {
-      setAlerts((prevAlerts) => ({ ...prevAlerts, [streamUrl]: [] }));
-    });
+    setAlerts({});
   };
 
   return (
     <div className="alert-container">
       <div className="alert-streams">
-        {["http://localhost:5000/alerts"].map((streamUrl) => (
-          <div key={streamUrl}>
-            <AlertStream streamUrl={streamUrl} alerts={alerts} setAlerts={setAlerts} />
-          </div>
-        ))}
+        <AlertStream streamUrl={streamUrl} alerts={alerts} setAlerts={setAlerts} />
       </div>
       <button className="clear-button" onClick={handleClearAlerts}>
         Clear History

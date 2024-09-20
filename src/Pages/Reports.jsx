@@ -12,7 +12,7 @@ const Report = () => {
     // Fetch the list of reports and videos from the backend
     const fetchReportsAndVideos = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/recent_reports');
+        const response = await axios.get('http://localhost:5000/reports');
         setReports(response.data.reports);
         setVideos(response.data.videos);
       } catch (error) {

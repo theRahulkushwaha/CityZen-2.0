@@ -2,9 +2,10 @@
 .react-calendar {
   width: 100%;
   max-width: 350px;
-  max-height: 280px;
+  max-height: 230px;
   overflow: hidden;
   font-family: Arial, sans-serif;
+  
 }
 
 /* Styling the date cells */

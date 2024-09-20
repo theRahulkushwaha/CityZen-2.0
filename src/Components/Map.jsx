@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
 
 import hospitalIconUrl from '../assets/hospital.png'; 
@@ -81,7 +81,7 @@ const MapPage = () => {
 
   // Dynamically set map height based on screen width for mobile responsiveness
   const mapStyle = {
-    height: window.innerWidth < 768 ? "auto" : "auto",
+    height: window.innerWidth < 768 ? "300px" : "400px",
     width: "100%",
   };
 
