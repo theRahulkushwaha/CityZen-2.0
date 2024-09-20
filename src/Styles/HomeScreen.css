@@ -104,7 +104,7 @@
   min-width: 400px;
   height: 100%;
   padding: 0 20px;
-  box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  /* box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1); Soft shadow for depth */
   border-radius: 20px;
   background-color: #112230;
 }
@@ -113,16 +113,16 @@
   color: rgb(255, 255, 255);
   font-size: 32px;
   line-height: 1;
-  padding-left: 5px;
-  padding-right: 25px;
+  /* padding-left: 5px;
+  padding-right: 25px; */
 }
 
 .panel {
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 5px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .incident-alert {
