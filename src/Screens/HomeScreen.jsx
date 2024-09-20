@@ -1,6 +1,4 @@
 import React from 'react';
-import { signOut } from "firebase/auth";
-import { auth } from '../firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/HomeScreen.css';
 import DropdownMenu from '../Components/DropdownMenu';
@@ -17,15 +15,6 @@ function HomeScreen() {
     navigate("/complain")
   }
 
-  const handleLogout = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      navigate("/");
-      console.log("Signed out successfully")
-    }).catch((error) => {
-      // An error happened.
-    });
-  }
 
   return (
     <>
@@ -42,13 +31,20 @@ function HomeScreen() {
                   <li><a href="Page3"> <img src="/image/cyber-security.png" alt="img" />Crime</a></li>
                   <li><a href="Page4"> <img src="/image/traffic-light.png" alt="img" />Traffic</a></li>
                 </ul>
-
               </div>
-              <div>
-                <button onClick={handleLogout}>
-                  <img src="/image/logout.png" alt="img" />Logout
-                </button>
-              </div>
+              <div className="complaint-sec">
+                  <div class="card">
+                    <div class="banner">
+                      {/* <span class="banner-text">complaint</span>
+                      <span class="banner-text">Let's Know</span> */}
+                    </div>
+                    <span class="card__title">Problem</span>
+                    <p class="card__subtitle">Have any issue to address<br></br>Let's Know</p>
+                    <form class="card__form">
+                      <button onClick={handlecomplaint} class="sign-up">Click Here</button>
+                    </form>
+                  </div>
+                </div>
             </nav>
           </div>
           <div className="right-cont">
@@ -69,19 +65,6 @@ function HomeScreen() {
                 <div className="alert-history">
                   <h2>Alert History</h2>
                   {/* <MovingAlerts /> */}
-                </div>
-                <div className="complaint-sec">
-                  <div class="card">
-                    <div class="banner">
-                      <span class="banner-text">complaint</span>
-                      <span class="banner-text">Let's Know</span>
-                    </div>
-                    <span class="card__title">Problem</span>
-                    <p class="card__subtitle">Have any issue to address<br></br>Let's Know</p>
-                    <form class="card__form">
-                      <button onClick={handlecomplaint} class="sign-up">Click Here</button>
-                    </form>
-                  </div>
                 </div>
               </div>
             </div>
