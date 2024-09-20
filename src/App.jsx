@@ -13,7 +13,7 @@ import Page1 from './Pages/Page1';
 import Page2 from './Pages/Page2';
 import Page3 from './Pages/Page3';
 import Page4 from './Pages/Page4';
-
+import Report from './Pages/Reports';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,6 +40,8 @@ function App() {
             {/* <Route path="/model" element={<AImodel/>}/> */}
             <Route path="/feedback" element={<Feedback/>}/>
             <Route path="/complain" element={<ComplaintForm/>}/>
+            {/* <Route path="/page1" element={<Page1 />} /> */}
+
 
           </Routes>
         </Router>
