@@ -6,7 +6,7 @@ import '../Styles/HomeScreen.css';
 import DropdownMenu from '../Components/DropdownMenu';
 import Calandar from '../Components/Calandar';
 /*import MovingAlerts from '../Components/AlertSec/MovingAlerts';*/
-import GoogleMapComponent from '../Components/Map';
+import Map from '../Components/Map';
 
 
 
@@ -69,7 +69,7 @@ function HomeScreen() {
               <div className="incident-alert">
                 <div className="alert-history">
                   <h2>Alert History</h2>
-                  <MovingAlerts />
+                  {/* <MovingAlerts /> */}
                 </div>
                 <div className="complaint-sec">
                   <div class="card">
@@ -88,7 +88,7 @@ function HomeScreen() {
             </div>
             <div className="right-cont-bottom">
               <div className="map-container">
-                <GoogleMapComponent />
+                <Map />
               </div>
               <div className="model-card">
                 <div className="card">

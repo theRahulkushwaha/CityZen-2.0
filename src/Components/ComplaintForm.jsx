@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const ComplaintForm = () => {
+const ComplaintForm = () => {
   return (
     <div>ComplaintForm</div>
   )
 }
+
+export default ComplaintForm

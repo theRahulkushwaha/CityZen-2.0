@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Calandar = () => {
+const Calandar = () => {
   return (
     <div>Calandar</div>
   )
 }
+
+export default Calandar
