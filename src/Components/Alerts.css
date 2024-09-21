@@ -1,62 +1,148 @@
+/* Container styling */
 .alert-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 10px;
+  padding: 15px;
   width: 100%;
+  background-color: #112230; /* Dark background for modern look */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
+/* Scrollable alert stream with modern scrollbars */
 .alert-streams {
-  flex-grow: 1; /* Allows the alert list to grow and take available space */
-  overflow-y: scroll; /* Adds scroll if there are many alerts */
+  flex-grow: 1;
+  overflow-y: auto;
   padding: 10px;
-  border: 1px solid #ffffff;
+  border: 1px solid #333;
+  background-color: #2b2b3c;
+  border-radius: 8px;
   margin-bottom: 10px;
-  position: relative; /* For scrollbar styling */
+  position: relative;
 }
 
-/* Custom scrollbar styles */
 .alert-streams::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 6px;
 }
 
 .alert-streams::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color of the scrollbar track */
+  background: #444; /* Dark scrollbar track */
 }
 
 .alert-streams::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
-  border-radius: 4px; /* Rounded corners for the thumb */
+  background: #888;
+  border-radius: 10px;
 }
 
 .alert-streams::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the scrollbar thumb on hover */
+  background: #b3b3b3;
 }
 
+/* Styling for alert list */
 .alert-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #e0e0e0;
 }
 
 .alert-item {
-  padding: 5px;
-  border-bottom: 1px solid #ffffff;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #34354d;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.alert-item:hover {
+  background-color: #46475f;
+}
+
+.alert-message {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.alert-time {
+  font-size: 12px;
+  color: #a1a1b1;
+  white-space: nowrap;
+}
+
+
+/* Clear button with sleek design */
 .clear-button {
-  background-color: #f44336;
+  background-color: #e91e63;
   color: white;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  align-self: center; /* Keeps the button at the end of the column */
-  position: sticky; /* Keeps the button fixed relative to the parent container */
-  margin-bottom: 5px;
+  align-self: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .clear-button:hover {
-  background-color: #d32f2f;
+  background-color: #c2185b;
+  transform: scale(1.05);
+}
+
+/* Video styling (if included) */
+.video-container {
+  background-color: #12121e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+.video-player {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.video-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Subtle fade-in animation for alerts */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-item {
+  animation: fadeIn 0.5s ease-in-out;
 }

@@ -1,4 +1,3 @@
-// alerts.jsx
 import React from "react";
 import "../Components/Alerts.css";
 
@@ -7,23 +6,33 @@ const AlertStream = ({ streamUrl, alerts, setAlerts }) => {
     const eventSource = new EventSource(streamUrl);
 
     const handleNewAlert = (event) => {
+      const timestamp = new Date().toLocaleTimeString(); // Get the current time
+      const newAlert = {
+        message: event.data,
+        time: timestamp,
+      };
       setAlerts((prevAlerts) => ({
         ...prevAlerts,
-        [streamUrl]: [...(prevAlerts[streamUrl] || []), event.data],
+        [streamUrl]: [...(prevAlerts[streamUrl] || []), newAlert],
       }));
     };
 
     eventSource.onmessage = handleNewAlert;
 
+    eventSource.onerror = () => {
+      console.error("Error in event stream");
+    };
+
     return () => eventSource.close();
-  }, [streamUrl]);
+  }, [streamUrl, setAlerts]);
 
   return (
     <ul className="alert-list">
       {alerts[streamUrl] &&
         alerts[streamUrl].map((alert, index) => (
           <li key={index} className="alert-item">
-            {alert}
+            <div className="alert-message">{alert.message}</div>
+            <div className="alert-time">{alert.time}</div>
           </li>
         ))}
     </ul>
@@ -34,7 +43,10 @@ function Alert({ streamUrl }) {
   const [alerts, setAlerts] = React.useState({});
 
   const handleClearAlerts = () => {
-    setAlerts({});
+    setAlerts((prevAlerts) => ({
+      ...prevAlerts,
+      [streamUrl]: [],
+    }));
   };
 
   return (
