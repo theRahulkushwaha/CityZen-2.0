@@ -62,7 +62,7 @@ def generate_frames():
             label = box['class']
             
             color = (0, 255, 0)  # Default color (green)
-            if label in ['chuckhole']: 
+            if label in ['CHUCKHOLE']: 
                 color = (0, 0, 255)  # Red color for specific labels
 
                 # ALERT SEND KRNE KEYE LEYE 
