@@ -4,8 +4,9 @@ import "../Styles/HomeScreen.css";
 import DropdownMenu from "../Components/DropdownMenu";
 import Calandar from "../Components/Calandar";
 import MapPage from "../Components/Map";
-import Alert from "../Components/Alerts";
+// import Alert from "../Components/Alerts";
 import Graph from "../Components/Graph";
+import Alert from "../Components/AlertsForHome";
 
 function HomeScreen() {
   const navigate = useNavigate();
