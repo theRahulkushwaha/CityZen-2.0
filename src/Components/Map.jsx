@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import "./Map.css";
 
 import hospitalIconUrl from '../assets/hospital.png'; 
 import policeIconUrl from '../assets/police.png'; 
 import LocIconUrl from '../assets/loc.png';
-
 
 const redIcon = new L.Icon({
   iconUrl: LocIconUrl, 
@@ -37,7 +37,6 @@ const MapPage = () => {
   const [places, setPlaces] = useState([]);
   const [locationError, setLocationError] = useState(false);
 
-  // Fetch user's current position using Geolocation API
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -46,13 +45,12 @@ const MapPage = () => {
       },
       (error) => {
         console.error("Error fetching the current position: ", error);
-        setLocationError(true); // Set error to true in case of failure
+        setLocationError(true); 
       },
       { enableHighAccuracy: true }
     );
   }, []);
 
-  // Fetch nearby hospitals and police stations using Overpass API
   useEffect(() => {
     if (currentPosition) {
       const overpassUrl = `
@@ -79,27 +77,19 @@ const MapPage = () => {
     }
   }, [currentPosition]);
 
-  // Dynamically set map height based on screen width for mobile responsiveness
-  const mapStyle = {
-    height: window.innerWidth < 768 ? "300px" : "400px",
-    width: "100%",
-  };
-
   return (
-    <div>
+    <div className="map-wrapper">
       {locationError ? (
         <p>Unable to determine your location. Please check your location settings.</p>
       ) : currentPosition ? (
-        <MapContainer center={currentPosition} zoom={13} style={mapStyle}>
+        <MapContainer center={currentPosition} zoom={13} className="map-container">
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          {/* Marker for the user's current location with red icon */}
           <Marker position={currentPosition} icon={redIcon}>
             <Popup>Your current location</Popup>
           </Marker>
-          {/* Markers for nearby hospitals and police stations */}
           {places.map((place) => (
             <Marker
               key={place.id}
