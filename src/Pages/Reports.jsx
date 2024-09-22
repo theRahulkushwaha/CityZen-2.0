@@ -24,59 +24,54 @@ const Report = () => {
   }, []);
 
   return (
-    <div className="report-page-container">
-      <h1>Accident Reports and Videos</h1>
+    <div className="report-container">
+      <h2>Accident Reports</h2>
 
-      <div className="selection-container">
-        {/* Select video */}
-        <div>
-          <h2>Select a Video:</h2>
-          <select onChange={(e) => setSelectedVideo(e.target.value)} defaultValue="">
-            <option value="" disabled>Select a video</option>
-            {videos.map((video, index) => (
-              <option key={index} value={video}>{video}</option>
-            ))}
-          </select>
-        </div>
-
-        {/* Select PDF Report */}
-        <div>
-          <h2>Select a PDF Report:</h2>
-          <select onChange={(e) => setSelectedReport(e.target.value)} defaultValue="">
-            <option value="" disabled>Select a report</option>
-            {reports.map((report, index) => (
-              <option key={index} value={report}>{report}</option>
-            ))}
-          </select>
-        </div>
+      <div className="video-list">
+        <h3>Select a Video:</h3>
+        <ul>
+          {videos.map((video, index) => (
+            <li key={index} onClick={() => setSelectedVideo(video)}>
+              {video}
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Display video and PDF side by side */}
-      <div className="media-container">
-        {/* Video Section */}
-        {selectedVideo && (
-          <div className="video-section">
-            <h3>Video:</h3>
-            <video controls>
-              <source src={`http://localhost:5000/videos/${selectedVideo}`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
-
-        {/* PDF Section */}
-        {selectedReport && (
-          <div className="pdf-section">
-            <h3>PDF Report:</h3>
-            <iframe
-              src={`http://localhost:5000/reports/${selectedReport}`}
-              title="PDF Report"
-              width="100%"
-              height="500px"
-            />
-          </div>
-        )}
+      <div className="report-list">
+        <h3>Select a Report:</h3>
+        <ul>
+          {reports.map((report, index) => (
+            <li key={index} onClick={() => setSelectedReport(report)}>
+              {report}
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Video Section */}
+      {selectedVideo && (
+        <div className="video-section">
+          <h3>Video:</h3>
+          <video controls>
+            <source src={`http://localhost:5000/videos/${selectedVideo}`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
+
+      {/* PDF Section */}
+      {selectedReport && (
+        <div className="pdf-section">
+          <h3>PDF Report:</h3>
+          <iframe
+            src={`http://localhost:5000/reports/${selectedReport}`}
+            title="PDF Report"
+            width="100%"
+            height="500px"
+          />
+        </div>
+      )}
     </div>
   );
 };

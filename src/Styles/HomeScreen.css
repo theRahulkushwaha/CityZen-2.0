@@ -51,6 +51,8 @@
     height: 20px;
     border-radius: 50%;
     margin-right: 4px;
+    
+    filter: invert(1);
 }
 
 .dashboard-navbar ul {
@@ -76,7 +78,9 @@
   color: #000000;
   background-color: #666;
   border-radius: 12px;
-  scale: 1.1;
+  scale: 1.2;
+  width: 90%;
+  padding: 1%;
 }
 .dashboard-navbar ul li a:hover {
   color: #000000;
