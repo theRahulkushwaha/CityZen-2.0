@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import "./Map.css";
+import "./Map.css"; // Custom styles
 
+// Importing custom icons
 import hospitalIconUrl from '../assets/hospital.png'; 
 import policeIconUrl from '../assets/police.png'; 
 import LocIconUrl from '../assets/loc.png';
 
+// Red icon for current location
 const redIcon = new L.Icon({
   iconUrl: LocIconUrl, 
   iconSize: [25, 41],
@@ -16,6 +18,7 @@ const redIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
+// Hospital icon
 const hospitalIcon = new L.Icon({
   iconUrl: hospitalIconUrl,
   iconSize: [25, 41],
@@ -24,6 +27,7 @@ const hospitalIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
+// Police icon
 const policeIcon = new L.Icon({
   iconUrl: policeIconUrl,
   iconSize: [25, 41],
@@ -38,6 +42,7 @@ const MapPage = () => {
   const [locationError, setLocationError] = useState(false);
 
   useEffect(() => {
+    // Get the user's current location
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
@@ -45,7 +50,7 @@ const MapPage = () => {
       },
       (error) => {
         console.error("Error fetching the current position: ", error);
-        setLocationError(true); 
+        setLocationError(true);
       },
       { enableHighAccuracy: true }
     );
@@ -53,6 +58,7 @@ const MapPage = () => {
 
   useEffect(() => {
     if (currentPosition) {
+      // Fetch nearby hospitals and police stations
       const overpassUrl = `
         https://overpass-api.de/api/interpreter?data=[out:json];
         (node["amenity"="hospital"](around:5000,${currentPosition[0]},${currentPosition[1]});
@@ -87,9 +93,12 @@ const MapPage = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
+          {/* Marker for current location */}
           <Marker position={currentPosition} icon={redIcon}>
             <Popup>Your current location</Popup>
           </Marker>
+
+          {/* Markers for hospitals and police stations */}
           {places.map((place) => (
             <Marker
               key={place.id}
