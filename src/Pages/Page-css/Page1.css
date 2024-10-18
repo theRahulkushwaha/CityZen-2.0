@@ -19,28 +19,26 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    /* background-color: #112230; */
 }
 
 .video-section {
     flex: 1;
     margin-right: 20px;
-    width: 70vw;
-    border:seagreen solid 2px;
+    width: 40vw; /* Decrease width */
+    border: seagreen solid 2px;
 }
 
 .video-wrapper {
     position: relative;
-    height: 100%;
+    height: 77vh; /* Set a fixed height */
     width: 100%;
 }
 
 .video-feed {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Maintain aspect ratio */
     object-fit: cover;
 }
-
 
 .alerts-section {
     width: 30%;
@@ -49,7 +47,7 @@
     padding: 10px;
     border-radius: 5px;
     overflow-y: auto;
-    border:seagreen solid 2px;
+    border: seagreen solid 2px;
 }
 
 .alerts-title {

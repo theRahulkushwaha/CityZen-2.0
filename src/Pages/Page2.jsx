@@ -1,4 +1,3 @@
-// Page2.jsx
 import React, { useEffect, useState } from "react";
 import "../Pages/Page-css/Page1.css";
 import Alert from "../Components/Alerts";
@@ -21,12 +20,12 @@ function Page2() {
                 src={videoSrc}
                 alt="video stream"
                 className="video-feed"
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                style={{ objectFit: "contain" }} // Remove width and height from inline style
               />
             )}
           </div>
         </div>
-        
+
         <div className="alerts-section">
           <Alert streamUrl="http://localhost:5002/alerts" />
         </div>
