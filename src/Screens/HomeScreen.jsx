@@ -45,13 +45,13 @@ function HomeScreen() {
                       Crime
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="Page4">
                       {" "}
                       <img src="/image/traffic-light.png" alt="img" />
                       Traffic
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </nav>
