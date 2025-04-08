@@ -71,7 +71,7 @@ The same applies to the other 3 models.
 ### 📂 *Clone the Repository*
 
 ```bash
-git clone https://github.com/your-username/citizen.git
+git clone https://github.com/theRahulkushwaha/CityZen-2.0.git
 cd citizen
 ```
 ### ▶️ *Run the Frontend*
